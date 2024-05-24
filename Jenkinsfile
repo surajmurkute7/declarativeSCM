@@ -2,10 +2,20 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Fetching the code') {
             steps {
-                echo 'welcome to devops session'
+                git branch: 'main', url: 'https://github.com/surajmurkute7/maven_Project.git'
             }
+           
         }
+        
+        stage('build') {
+            steps {
+                build 'maven-job'
+            }
+           
+        }
+       
     }
 }
+
