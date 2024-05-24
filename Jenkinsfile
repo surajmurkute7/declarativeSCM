@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Fetching the code') {
+        stage('fetching the code from git hub') {
             steps {
                 git branch: 'main', url: 'https://github.com/surajmurkute7/maven_Project.git'
             }
